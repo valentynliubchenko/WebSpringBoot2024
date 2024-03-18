@@ -33,9 +33,19 @@ public class PersonControllerNew {
     @Value("${my.hello}")
     private String hello;
     @RequestMapping(method = RequestMethod.GET, value = "/info")
-    public String getInfo(@RequestParam(required = false) String name){
+    public String getInfo(){
         return hello ;
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/infoname/{name}")
+    public String getInfoname(@PathVariable(required = false) String name){
+        return hello + " " + name;
+    }
+//example call http://localhost:9090/api/infoname/valentyn
 
+    @RequestMapping(method = RequestMethod.GET, value = "/infonamenew")
+    public String getInfonamenew(@RequestParam(required = false) String name){
+        return hello + " " + name;
+    }
+//example http://localhost:9090/api/infonamenew?name=valentyn
 }
