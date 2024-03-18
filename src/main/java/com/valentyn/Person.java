@@ -1,5 +1,7 @@
 package com.valentyn;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.ToString;
 
 @ToString
@@ -29,5 +31,17 @@ public class Person {
     public static void setI2(int i) {
         Person.i = i;
     }
+
+
+//    @PostConstruct
+//    public void init()    {
+//        System.out.println("PostConstruct init");
+//    }
+//
+//    @PreDestroy
+//    public void destroy()    {
+//        System.out.println("PreDestroy destroy");
+//    }
+
 
 }
