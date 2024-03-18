@@ -22,5 +22,8 @@ public class WebApplication {
 		System.out.println(person.getName());
 		System.out.println(person2.getName());
 
+        PersonController personController = context.getBean(PersonController.class);
+        System.out.println(personController.createPerson());
+
     }
 }
