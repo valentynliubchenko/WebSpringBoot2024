@@ -5,12 +5,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+//@Controller
+@RestController
 public class PersonControllerNew {
 
     @Autowired
@@ -24,7 +22,7 @@ public class PersonControllerNew {
     }
 
     @GetMapping("/createPersonNew")
-    @ResponseBody
+    //@ResponseBody
     public Person createPersonNew() {
         return personInterface.createPerson();
     }
