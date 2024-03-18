@@ -6,8 +6,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
     @Bean
+//    @Bean(name="SecondPerson")
 //	@Scope("prototype")
-    public Person myPperson(){
+    public Person myPerson(){
         return new Person();
     }
 }
