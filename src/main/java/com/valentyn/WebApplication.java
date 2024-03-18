@@ -25,5 +25,7 @@ public class WebApplication {
         PersonController personController = context.getBean(PersonController.class);
         System.out.println(personController.createPerson());
 
+        System.out.println(personController.createPersonService());
+
     }
 }

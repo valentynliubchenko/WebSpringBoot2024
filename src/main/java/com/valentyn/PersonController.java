@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PersonController {
 
+    //private final PersonService personService =new PersonService(); //ручное упрвление
+
     private Person myPerson;
 
 //    @Autowired
@@ -22,12 +24,24 @@ public class PersonController {
     @Qualifier("customPersonService")
     private PersonInterface service;
 
-    //private final PersonService personService =new PersonService(); //ручное упрвление
+
+//Внедрение зависимости через конструктор
+    private final PersonInterface personService;
+
+    public PersonController(PersonService personService) {
+        this.personService = personService;
+    }
 
     @RequestMapping
     public Person createPerson() {
         //return customPersonService.createPerson();
         return service.createPerson();
     }
+
+    public Person createPersonService() {
+        //return customPersonService.createPerson();
+        return personService.createPerson();
+    }
+
 
 }
