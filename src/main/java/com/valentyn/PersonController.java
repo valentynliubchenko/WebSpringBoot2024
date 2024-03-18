@@ -12,8 +12,6 @@ public class PersonController {
 
     //private final PersonService personService =new PersonService(); //ручное упрвление
 
-    private Person myPerson;
-
 //    @Autowired
 //    private PersonInterface personService;
 
@@ -32,7 +30,7 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @RequestMapping
+
     public Person createPerson() {
         //return customPersonService.createPerson();
         return service.createPerson();
