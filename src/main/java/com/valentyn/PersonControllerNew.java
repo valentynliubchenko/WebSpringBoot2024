@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 //@Controller
 @RestController
 @RequestMapping("/api")
@@ -28,7 +30,8 @@ public class PersonControllerNew {
             consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
-    public Person createPerson(@RequestBody Person person) {
+    public Person createPerson(@RequestBody Person person, @RequestHeader("MyParamHeader") String myParamHeader) {
+        System.out.println(myParamHeader);
         return personService.processingPerson(person);
     }
 
