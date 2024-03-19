@@ -6,4 +6,13 @@ my:
 
 spring:
   profiles:
-    active: test
+    active: default
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"

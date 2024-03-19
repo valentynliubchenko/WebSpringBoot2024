@@ -17,7 +17,7 @@ public class AppConfig {
 
     @Bean
 //    @Bean(name="SecondPerson")
-    @Profile("test")
+    @Profile("test1,test2")
     public Person myNewPerson(){
         return new Person();
     }
