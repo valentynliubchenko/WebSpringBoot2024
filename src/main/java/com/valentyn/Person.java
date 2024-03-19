@@ -2,12 +2,34 @@ package com.valentyn;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import lombok.Data;
 import lombok.ToString;
+
+import java.time.LocalDateTime;
 
 @ToString
 public class Person {
     private static int i;
     private String name;
+    private String year;
+    private LocalDateTime createDate;
+
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public LocalDateTime getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(LocalDateTime createDate) {
+        this.createDate = createDate;
+    }
 
     public Person() {
         i++;

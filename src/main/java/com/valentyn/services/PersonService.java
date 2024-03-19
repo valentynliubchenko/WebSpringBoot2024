@@ -4,6 +4,8 @@ import com.valentyn.Person;
 import com.valentyn.PersonInterface;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service("customPersonService")
 //@Component
 public class PersonService implements PersonInterface {
@@ -13,4 +15,11 @@ public class PersonService implements PersonInterface {
         person.setName("newName");
         return person;
     }
+
+    @Override
+    public Person processingPerson(Person person) {
+        person.setCreateDate(LocalDateTime.now());
+        return person;
+    }
+
 }
