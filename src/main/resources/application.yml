@@ -3,3 +3,7 @@ server:
 
 my:
   hello: Hello my friend
+
+spring:
+  profiles:
+    active: test
