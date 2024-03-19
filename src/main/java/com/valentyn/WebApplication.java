@@ -8,9 +8,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class WebApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(WebApplication.class);
-//        for (String name : context.getBeanDefinitionNames()) {
-//            System.out.println(name);
-//        }
+        for (String name : context.getBeanDefinitionNames()) {
+            System.out.println(name);
+        }
 //
 //        Person person = context.getBean(Person.class);
 //        System.out.println(person.getI());
