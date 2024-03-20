@@ -1,5 +1,8 @@
 package com.valentyn;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,9 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 //@Controller
+@Tag(name = "Person API", description = "The  API for Person")
 @RestController
 @RequestMapping("/api")
 public class PersonControllerNew {
@@ -25,6 +27,7 @@ public class PersonControllerNew {
         return new ResponseEntity<>(personService.createPerson(), HttpStatusCode.valueOf(200));
     }
 
+    @Operation(summary = "My Creating person", description = "This method createPerson")
     //    @RequestMapping(method = RequestMethod.POST, value = "/createPerson")
     @RequestMapping(method = RequestMethod.POST, value = "/createPerson",
             consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
@@ -52,7 +55,7 @@ public class PersonControllerNew {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/infoname/{name}")
-    public String getInfoname(@PathVariable(required = false) String name) {
+    public String getInfoname(@Parameter(description = "It is the main parametr") @PathVariable(required = false) String name) {
         return hello + " " + name;
     }
 //example call http://localhost:9090/api/infoname/valentyn
