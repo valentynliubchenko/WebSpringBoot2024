@@ -4,10 +4,14 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
+
 @ToString
 public class Person {
     private static int i;
     private String name;
+    private String year;
+    private LocalDateTime createDate;
 
     public Person() {
         i++;
@@ -32,8 +36,23 @@ public class Person {
         Person.i = i;
     }
 
+    public String getYear() {
+        return year;
+    }
 
-//    @PostConstruct
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public LocalDateTime getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(LocalDateTime createDate) {
+        this.createDate = createDate;
+    }
+
+    //    @PostConstruct
 //    public void init()    {
 //        System.out.println("PostConstruct init");
 //    }

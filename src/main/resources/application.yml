@@ -3,3 +3,12 @@ server:
 
 my:
   hello: Hello my friend
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
